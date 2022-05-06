@@ -1,0 +1,14 @@
+<div class="comment" id = "{{value.id}}">
+    <div class="close-btn-access" *ngIf = "(getLoggedStatus()=='admin' || getUserName());then showBtn"></div>
+    <ng-template #showBtn>
+        <div class="close-btn" (click) = 'deleteComment(value.id)'> 
+            <img src="../../../../../../assets/img/close 1.svg" alt="">
+        </div>
+    </ng-template>
+    <div class="avatar">
+        <img src={{addAvatar()}} alt="" class="avatar-img">
+    </div>
+    <div class="comment-content">
+        <div class="user-name">{{value.userName}}</div>
+        <div class="comment-text">{{value.commentText}}</div>
+</div>

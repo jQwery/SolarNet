@@ -1,0 +1,74 @@
+<form class="user-page" #userForm = 'ngForm'>
+    <div class="user-info">
+        <div class="left-side-container">
+            <div class="avatar" (click) = 'showAvatarChangeBar($event)'>
+                <img src={{getUserValues().avatarLink}} alt="" class="av-img">
+            </div>
+            <div class="change-av-img-container none">
+                <input style="display: none" #fileInput type="file" (change)="onFileSelected($event)" >
+                <div class="upload-img" (click)='fileInput.click()'>Нажмите чтобы добавить фото<img src="../../../../assets/img/free-icon-paperclip-1632690.svg" alt=""></div>
+                <button class="change-avatar" (click) = 'openPasswordConfirmModule($event)'>Изменить</button>
+                <div class="close-btn" (click) = 'closeAvatarChangeBar($event)'>
+                    <img src="../../../../assets/img/close 1.svg" alt="">
+                </div>
+            </div>
+            <button class="exit" (click) = 'printUserValues();openPasswordConfirmModule($event)' [disabled] = '!userForm.form.valid'>Изменить данные</button>
+        </div>
+        <div class="data-inputs-container">
+            <div class="user-name">{{getUserValues().name}}</div>
+            <input type="text" class="user-name-change changable" placeholder="Введите ваше новое имя" [(ngModel)] = 'getUserValues().name' #name = 'ngModel' name="name" required minlength = '3' maxlength = '30'>
+            <input type="text" class="user-mail-change changable" readonly placeholder="Введите вашу новую почту" [(ngModel)] = 'getUserValues().mail' #mail = 'ngModel' name="mail" required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'>
+            <input type="text" class="user-phone-number-change changable" placeholder="Введите ваш новый номер телефона" [(ngModel)] = 'getUserValues().phoneNumber' #phoneNumber = 'ngModel' name="phoneNumber" required pattern = '^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$'>
+            <button class="small" (click) = 'openPasswordChangeModule($event)'>Сменить пароль</button>
+
+            <form class="passwords-container none">
+                <div class="close-btn" (click) = 'closePasswordsModules($event)'>
+                    <img src="../../../../assets/img/close 1.svg" alt="" (click) = 'closePasswordsModules($event)'>
+                </div>
+                <div class="data-input-container password-input-container">
+                    <input type="password"  #passWord = 'ngModel' class="user-password-change changable" placeholder="Подтвердите текущий пароль" [(ngModel)] = 'getUserValues().password' name = 'password' required minlength ='8'>
+                    <div *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)">
+                        <div *ngIf = "passWord.invalid && passWord.touched">
+                           Поле не соответствует требованиям
+                        </div>
+                    </div>
+                </div>
+                <div class="button-type" *ngIf = 'buttonType == "avatar"; then avatarBtn else dataBtn'></div>
+                <ng-template #avatarBtn>
+                    <button class="small" [disabled] = '!passWord.valid' (click) = 'printUserValues();changeUserValues("2")'>Подтвердить изменения фото</button>
+                </ng-template>
+                <ng-template #dataBtn>
+                    <button class="small" [disabled] = '!passWord.valid' (click) = 'printUserValues();changeUserValues("1")'>Подтвердить изменения данных</button>
+                </ng-template>
+                
+            </form>
+
+            <form class="new-password-container none" #changePasswordForm = 'ngForm'>
+                <div class="close-btn" (click) = 'closePasswordsModules($event)'>
+                    <img src="../../../../assets/img/close 1.svg" alt="" (click) = 'closePasswordsModules($event)'>
+                </div>
+                <div class="data-input-container password-input-container">
+                    <input type="password"  #passwordAgain = 'ngModel' class="user-password-change changable"placeholder="Новый пароль" [(ngModel)] = 'getUserValues().passwordAgain' name = 'passwordAgain' required pattern = '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z])\S{8,15}$'>
+                    <div *ngIf="passwordAgain.invalid && (passwordAgain.dirty || passwordAgain.touched)">
+                        <div *ngIf = "passwordAgain.errors?.pattern && passwordAgain.touched">
+                            Поле должно содержать строчную, заглавную буквы, цифры и спец.символы
+                        </div>
+                    </div>
+                </div> 
+                <div class="data-input-container password-2-input-container">
+                    <input type="password" #passwordAgainSub = 'ngModel' class="user-password-again-change changable" placeholder="Повторите пароль" [(ngModel)] = 'getUserValues().passwordAgainSub' name = 'passwordAgainSub' required minlength = '8'>
+                </div>
+                <div *ngIf="(changePasswordForm.invalid || changePasswordForm.value?.passwordAgain != changePasswordForm.value?.passwordAgainSub) && (changePasswordForm.touched)" class="error-massage">
+                <div *ngIf = "changePasswordForm.invalid; else nomatch">
+                    Заполните верно все поля
+                </div>
+                    <ng-template #nomatch >
+                        Пароли не совпадают
+                    </ng-template>
+                </div>  
+                <button class="small" [disabled] = '!changePasswordForm.form.valid' (click) = 'openPasswordConfirmModule($event)'>Сменить пароль</button>
+            </form>
+        </div>
+    </div>
+    <button class="apply-changes" (click) = 'exit()'>Выйти</button>
+</form>

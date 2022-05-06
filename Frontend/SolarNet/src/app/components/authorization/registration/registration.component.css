@@ -1,0 +1,584 @@
+.registration-container{
+    position: fixed;
+    top: 25%;
+    left: 40%;
+    width: 300px;
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 7px;
+    background: #fff;
+    z-index: 5;
+}
+
+.reg-form-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.reg-access{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.message{
+    word-wrap: break-word;
+    width: 80%;
+    text-align: center;
+}
+
+.access-img{
+    width: 30%;
+    height: 30%;
+}
+
+.access-img>img{
+    width: 100%;
+    height: 100%;
+}
+
+.title{
+    font-size: 20px;
+}
+
+input.data-input{
+    font-size: 14px;
+    color: #A5A5A5;
+    width: 260px;
+    height: 30px;
+    padding-left: 10px;
+    border: 1px solid #A5A5A5;
+    border-radius: 7px;
+    background: #F0F0F0;
+}
+
+.code-input-container{
+    width: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input.code-input{
+    width: 120px;
+}
+
+.passwords-container{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.not-robot-code{
+    width: 125px;
+    height: 32px;
+    border: 1px solid #A5A5A5;
+    border-radius: 7px;
+    color:  #A5A5A5;
+    text-align: center;
+    line-height: 32px;
+}
+
+.invisible{
+    display: none;
+}
+
+.close-btn{
+    position: absolute;
+    top: 10px;
+    left: 275px
+}
+
+.close-btn:hover{
+    cursor: pointer;
+}
+
+button.active-btn{
+    border: 2px solid black;
+    border-radius: 7px;
+    background: #FFF854;
+    width: 270px;
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+button.active-btn:hover{
+    background: #FFFA7E;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+button.active-btn:active{
+    background-color: #FFF617;
+}
+
+button.active-btn[disabled]{
+    width: 270px;
+    height: 40px;
+    border: 2px solid #A5A5A5;
+    background: #fff;
+    border-radius: 7px;
+    font-size: 14px;
+    color: #A5A5A5;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* ------------------------/registration------------------------ */
+
+.sign-in-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 350px;
+    border: 2px solid black;
+    border-radius: 7px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.password-s-input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+
+.password-help{
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+.sign-in-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 270px;
+}
+
+button.sign-in{
+    width: 125px;
+    height: 30px;
+    font-size: 14px;
+}
+
+.social-links{
+    width: 130px;
+    display: flex;
+    flex-direction: column;    
+}
+
+.links-container{
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.s-link{
+    width: 20px;
+    height: 20px;
+}
+
+.link-sign-in{
+    margin-top: 10px;
+    font-size: 10px;
+    align-self: flex-end;
+}
+
+.sign-in-line{
+    width: 90%;
+    border-bottom: 1px solid #A5A5A5;;
+}
+
+.error-massage{
+    font-size: 12px;
+    width: 80%;
+    padding-left: 5px;
+    /* align-self: center; */
+}
+
+@media only screen and (max-width : 769px){
+    .reg-form-container{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .title{
+        font-size: 40px;
+    }
+    
+    input.data-input{
+        font-size: 20px;
+        width: 700px;
+        height: 60px;
+        padding-left: 10px;
+    }
+    
+    .code-input-container{
+        width: 700px;
+    }
+    
+    input.code-input{
+        width: 500px;
+    }
+    
+    .not-robot-code{
+        width: 150px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 20px;
+    }
+    
+    .invisible{
+        display: none;
+    }
+    
+    .close-btn{
+        position: absolute;
+        top: 10px;
+        left: 20px
+    }
+    
+    .close-btn:hover{
+        cursor: pointer;
+    }
+    
+    button.active-btn{
+        width: 400px;
+        height: 70px;
+        margin-bottom: 30px;
+    }
+    
+    button.active-btn:hover{
+        background: #FFFA7E;
+        cursor: pointer;
+        transition: 0.1s;
+    }
+    
+    button.active-btn:active{
+        background-color: #FFF617;
+    }
+    
+    button.active-btn[disabled]{
+        width: 400px;
+        height: 70px;
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    /* ------------------------/registration------------------------ */
+    
+    .sign-in-form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 300px;
+        height: 350px;
+        border: 2px solid black;
+        border-radius: 7px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    
+    .password-s-input-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .password-help{
+        margin-top: 10px;
+        font-size: 10px;
+    }
+    
+    .sign-in-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 270px;
+    }
+    
+    button.sign-in{
+        width: 125px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .social-links{
+        width: 130px;
+        display: flex;
+        flex-direction: column;    
+    }
+    
+    .links-container{
+        width: 130px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .s-link{
+        width: 20px;
+        height: 20px;
+    }
+    
+    .link-sign-in{
+        margin-top: 10px;
+        font-size: 10px;
+        align-self: flex-end;
+    }
+    
+    .sign-in-line{
+        width: 90%;
+        border-bottom: 1px solid #A5A5A5;;
+    }
+    
+    .error-massage{
+        font-size: 18px;
+        width: 80%;
+        padding-left: 5px;
+    }
+}
+
+@media only screen and (max-width : 426px){
+    .title{
+        font-size: 20px;
+    }
+    
+    input.data-input{
+        font-size: 15px;
+        width: 380px;
+        height: 40px;
+        padding-left: 10px;
+    }
+    
+    .code-input-container{
+        width: 390px;
+    }
+    
+    input.code-input{
+        width: 280px;
+    }
+    
+    .not-robot-code{
+        width: 90px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+    }
+    
+    .invisible{
+        display: none;
+    }
+    
+    .close-btn{
+        top: 10px;
+        left: 10px
+    }
+
+    button.active-btn{
+        width: 250px;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+    
+    button.active-btn[disabled]{
+        width: 250px;
+        height: 50px;
+        font-size: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    /* ------------------------/registration------------------------ */
+    
+    .sign-in-form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 300px;
+        height: 350px;
+        border: 2px solid black;
+        border-radius: 7px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    
+    .password-s-input-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .password-help{
+        margin-top: 10px;
+        font-size: 10px;
+    }
+    
+    .sign-in-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 270px;
+    }
+    
+    button.sign-in{
+        width: 125px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .social-links{
+        width: 130px;
+        display: flex;
+        flex-direction: column;    
+    }
+    
+    .links-container{
+        width: 130px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .s-link{
+        width: 20px;
+        height: 20px;
+    }
+    
+    .link-sign-in{
+        margin-top: 10px;
+        font-size: 10px;
+        align-self: flex-end;
+    }
+    
+    .sign-in-line{
+        width: 90%;
+        border-bottom: 1px solid #A5A5A5;;
+    }
+    
+    .error-massage{
+        font-size: 18px;
+        width: 80%;
+        padding-left: 5px;
+    }
+}
+
+@media only screen and (max-width : 376px){
+    .title{
+        font-size: 16px;
+    }
+    
+    input.data-input{
+        font-size: 15px;
+        width: 340px;
+    }
+    
+    .code-input-container{
+        width: 350px;
+    }
+    
+    input.code-input{
+        width: 260px;
+    }
+    
+    .not-robot-code{
+        width: 70px;
+    }
+    
+    .invisible{
+        display: none;
+    }
+    
+    /* ------------------------/registration------------------------ */
+    
+    .sign-in-form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 300px;
+        height: 350px;
+        border: 2px solid black;
+        border-radius: 7px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    
+    .password-s-input-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .password-help{
+        margin-top: 10px;
+        font-size: 10px;
+    }
+    
+    .sign-in-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 270px;
+    }
+    
+    button.sign-in{
+        width: 125px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .social-links{
+        width: 130px;
+        display: flex;
+        flex-direction: column;    
+    }
+    
+    .links-container{
+        width: 130px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .s-link{
+        width: 20px;
+        height: 20px;
+    }
+    
+    .link-sign-in{
+        margin-top: 10px;
+        font-size: 10px;
+        align-self: flex-end;
+    }
+    
+    .sign-in-line{
+        width: 90%;
+        border-bottom: 1px solid #A5A5A5;;
+    }
+    
+    .error-massage{
+        font-size: 18px;
+        width: 80%;
+        padding-left: 5px;
+    }
+}

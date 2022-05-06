@@ -1,0 +1,16 @@
+<div class="comments">
+    <div *ngIf = 'isComments; then addFromServer; else addMessage'></div>
+    <ng-template #addFromServer>
+        <div class="title">Комментарии</div>
+    </ng-template>
+    <ng-template #addMessage>
+        <div class="add-comment-massage-bar">
+            <img src="../../../../../assets/img/speech-bubble.svg" alt="" class="no-comment-icon">
+            <div class="add-comment-massage">Здесь пока нет комментариев, но вы можете оставить его первым</div> 
+            
+        </div>
+    </ng-template>
+    <div class="comments-bar">
+        <ng-template #comment></ng-template>
+    </div>
+</div>

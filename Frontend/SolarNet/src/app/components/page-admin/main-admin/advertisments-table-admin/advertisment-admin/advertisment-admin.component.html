@@ -1,0 +1,34 @@
+    <td [routerLink] = "['advertisment', value.id]" class = 'body-item'>{{value.id}} </td>
+    <td [routerLink] = "['advertisment', value.id]" class = 'body-item'>Автор: {{value.userName}}</td>
+    <td [routerLink] = "['advertisment', value.id]" class = 'body-item'>{{value.advertismentTitle}}</td>
+    <td [routerLink] = "['advertisment', value.id]" class = 'body-item'>{{this.categoriesNames[this.categoryId - 1]}}</td>
+    <td class = 'body-item last-table-column b{{value.id}}'>{{date}}
+        <div class="approval-bar" *ngIf = 'getAdvListType(); then administrationBtns'></div>
+        <ng-template #administrationBtns>
+            <div class="confirm-bar confirm-approve a none">
+                <div class="message">Одобрить?</div>
+                <div class="btns">                
+                    <button class="confirm-btn yes a" (click) = 'approveAdv()'>Да</button>
+                    <button class="confirm-btn no a" (click) = 'showConfirmBar($event)'>Нет</button>
+                </div>
+            </div>
+            <div class="confirm-bar confirm-not-approve n-a none">
+                <div class="message">Отклонить?</div>
+                <div class="btns">                
+                    <button class="confirm-btn yes n-a" (click) = 'rejectAdv()'>Да</button>
+                    <button class="confirm-btn no n-a" (click) = 'showConfirmBar($event)'>Нет</button>
+                </div>
+            </div>
+            <div class="administration-btns">
+                <div class="approve btn a" (click) = 'showConfirmBar($event)'>
+                    <img src="../../../../../../assets/img/free-icon-check-mark-64484.svg" alt="" class="a">
+                </div>
+                <div class="not-approve btn n-a"  (click) = 'showConfirmBar($event)'>
+                    <img src="../../../../../../assets/img/free-icon-forbidden-mark-70206.svg" alt="" class="n-a" >
+                </div>
+            </div>
+        </ng-template>
+    </td>
+    
+    <!-- Ссылки добавлены всем элементам, тк на данный момент нет возможности обьеденить их в один блок, потому что все столбцы
+    будут располагаться не так как нужно -->

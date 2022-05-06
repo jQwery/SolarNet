@@ -1,0 +1,229 @@
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Edik\Source\Repos\Back-end\SolaraNet
+An unhandled exception has occurred while executing the request.
+LogCritical /swagger/swagger-ui-bundle.js.map
+LogCritical /swagger/swagger-ui-standalone-preset.js.map
+LogError /swagger/swagger-ui-bundle.js.map
+LogError /swagger/swagger-ui-standalone-preset.js.map
+LogInformation /swagger/swagger-ui-bundle.js.map
+LogInformation /swagger/swagger-ui-standalone-preset.js.map
+LogWarning /swagger/swagger-ui-bundle.js.map
+LogWarning /swagger/swagger-ui-standalone-preset.js.map
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Edik\Source\Repos\Back-end\SolaraNet
+An unhandled exception has occurred while executing the request.
+LogCritical /swagger/swagger-ui-bundle.js.map
+LogCritical /swagger/swagger-ui-standalone-preset.js.map
+LogError /swagger/swagger-ui-bundle.js.map
+LogError /swagger/swagger-ui-standalone-preset.js.map
+LogInformation /swagger/swagger-ui-bundle.js.map
+LogInformation /swagger/swagger-ui-standalone-preset.js.map
+LogWarning /swagger/swagger-ui-bundle.js.map
+LogWarning /swagger/swagger-ui-standalone-preset.js.map
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Edik\Source\Repos\Back-end\SolaraNet
+An unhandled exception has occurred while executing the request.
+LogCritical /swagger/swagger-ui-bundle.js.map
+LogCritical /swagger/swagger-ui-standalone-preset.js.map
+LogError /swagger/swagger-ui-bundle.js.map
+LogError /swagger/swagger-ui-standalone-preset.js.map
+LogInformation /swagger/swagger-ui-bundle.js.map
+LogInformation /swagger/swagger-ui-standalone-preset.js.map
+LogWarning /swagger/swagger-ui-bundle.js.map
+LogWarning /swagger/swagger-ui-standalone-preset.js.map
+An unhandled exception has occurred while executing the request.
+LogCritical /favicon.ico
+LogError /favicon.ico
+LogInformation /favicon.ico
+LogWarning /favicon.ico
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Edik\Source\Repos\Back-end\SolaraNet
+LogCritical /swagger/swagger-ui-standalone-preset.js.map
+LogCritical /swagger/swagger-ui-bundle.js.map
+LogError /swagger/swagger-ui-standalone-preset.js.map
+LogError /swagger/swagger-ui-bundle.js.map
+LogInformation /swagger/swagger-ui-standalone-preset.js.map
+LogInformation /swagger/swagger-ui-bundle.js.map
+LogWarning /swagger/swagger-ui-standalone-preset.js.map
+LogWarning /swagger/swagger-ui-bundle.js.map
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/Advertisment/all
+LogError /api/Advertisment/all
+LogInformation /api/Advertisment/all
+LogWarning /api/Advertisment/all
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/registration
+LogError /api/User/registration
+LogInformation /api/User/registration
+LogWarning /api/User/registration
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/registration
+LogError /api/User/registration
+LogInformation /api/User/registration
+LogWarning /api/User/registration
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/registration
+LogError /api/User/registration
+LogInformation /api/User/registration
+LogWarning /api/User/registration
+LogCritical /api/User/registration
+LogError /api/User/registration
+LogInformation /api/User/registration
+LogWarning /api/User/registration
+LogCritical /api/User/registration
+LogError /api/User/registration
+LogInformation /api/User/registration
+LogWarning /api/User/registration
+LogCritical /api/User/registration
+LogError /api/User/registration
+LogInformation /api/User/registration
+LogWarning /api/User/registration
+LogCritical /api/User/registration
+LogError /api/User/registration
+LogInformation /api/User/registration
+LogWarning /api/User/registration
+LogCritical /api/User/registration
+LogError /api/User/registration
+LogInformation /api/User/registration
+LogWarning /api/User/registration
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Users\Edik\Source\Repos\Back-end\SolaraNet
+LogCritical /swagger/swagger-ui-standalone-preset.js.map
+LogCritical /swagger/swagger-ui-bundle.js.map
+LogError /swagger/swagger-ui-standalone-preset.js.map
+LogInformation /swagger/swagger-ui-standalone-preset.js.map
+LogError /swagger/swagger-ui-bundle.js.map
+LogWarning /swagger/swagger-ui-standalone-preset.js.map
+LogInformation /swagger/swagger-ui-bundle.js.map
+LogWarning /swagger/swagger-ui-bundle.js.map
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/Advertisment/1
+LogError /api/Advertisment/1
+LogInformation /api/Advertisment/1
+LogWarning /api/Advertisment/1
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: C:\Projects\Final\SolarSite\SolaraNet
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+LogCritical /api/User/register
+LogError /api/User/register
+LogInformation /api/User/register
+LogWarning /api/User/register
+LogCritical /api/Advertisment/-1
+LogError /api/Advertisment/-1
+LogInformation /api/Advertisment/-1
+LogWarning /api/Advertisment/-1

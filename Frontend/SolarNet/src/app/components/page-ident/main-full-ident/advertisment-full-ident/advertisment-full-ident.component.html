@@ -1,0 +1,53 @@
+<div class="advertisment-full">
+    <div class="advertisment">
+        <div class="title-line">
+            <div class="name">{{value.advertismentTitle}}</div>
+            <div class="price">{{value.price}}р.</div>
+         </div>
+        <div class="description-bar">    
+            <div class="main-img">
+                <div class="left-arrow arrow left" (click) = 'slider($event)'>
+                    <img src="../../../../assets/img/left-arrow 1.svg" alt="" class="left">
+                </div>
+                <img src="{{value.images[0]}}" alt="" class="adv-main-img">
+                <div class="right-arrow arrow right" (click) = 'slider($event)'>
+                    <img src="../../../../assets/img/right-arrow 1.svg" alt="" class="right">
+                </div>
+            </div>
+            <div class="description">{{value.description}}
+            </div>
+        </div>
+        <div class="info-line">
+            <div class="btns-container" [ngSwitch] ='getLoggedStatus()'>
+                <ng-template ngSwitchCase = "nd">
+                    <button class="info-line-btn show-phone" (click) = 'showPhoneNumber($event)'>Телефон</button>
+                </ng-template>
+                <!-- Авторизованный пользователь, блок добавление комментариев -->
+                <ng-template ngSwitchCase = "user">
+                    <button class="info-line-btn show-phone" (click) = 'showPhoneNumber($event)'>Телефон</button>
+                    <button class="info-line-btn add-comment" (click) = 'toggleCommentBar()'>
+                        <img src="../../../../../assets/img/add 1.svg" alt="">
+                        Комментарий
+                    </button> 
+                    <div class="new-comment none">
+                        <textarea class="new-comment-text-field" placeholder="Введите текст комментария. Минимальная длина 3 символа. Кнопка 'отменить' удалит текст комментария. Кнопка '+Комментарий' свернет текстовое поле" name="" id="" cols="30" rows="10" [(ngModel)] = 'commentValues.text'></textarea>
+                        <div class="new-comment-btns-container">
+                            <button class="publicate" (click) = 'saveCommentValues();submit(this.commentValues)'>Оставить</button>
+                            <button class="close" (click) = 'clearCommentValues()'>Отмена</button>
+                        </div>
+                    </div>           
+                </ng-template>
+                <ng-template ngSwitchCase = "admin">
+                    <button *ngIf = 'startBtnView' class="info-line-btn delete-adv" (click)  = 'openConfirmBtns()'>Удалить обьявление</button>
+                    <div *ngIf = '!startBtnView' class="confirm-btns">
+                        <button class="confirm-btn yes"  (click) = 'deleteAdv(value.id)'>Удалить</button>
+                        <button class="confirm-btn no" (click) = 'closeConfirmBtns()'>Отмена</button>
+                    </div>
+                </ng-template>     
+            </div>       
+            <div class="author" (click) = 'addOtherUserAdvList()' [routerLink] = "['']">Автор: {{value.userName}}</div>
+            <div class="date">{{date}}</div>
+        </div>
+    </div>
+    <div class="advertisment-line"></div>
+</div>

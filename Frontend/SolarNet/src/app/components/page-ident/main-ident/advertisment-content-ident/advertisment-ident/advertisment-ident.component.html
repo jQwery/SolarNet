@@ -1,0 +1,56 @@
+<div class="advertisments-bar a{{value.id}}">
+    <div class="advertisment {{manageAdv()}}" id = "{{value.id}}">
+        <div class="images">
+            <div class="main-img" [ngClass] = "{'main-img-round-borders': addRoundBorders()}" (click) = 'makeMainImgBig($event)'>
+                <div class="left-arrow arrow left none" (click) = 'slider($event)'>
+                    <img src="../../../../assets/img/left-arrow 1.svg" alt="" class="left">
+                </div>
+                <img src="{{mainImgLink}}" alt="" class="main">
+                <div class="right-arrow arrow right none" (click) = 'slider($event)'>
+                    <img src="../../../../assets/img/right-arrow 1.svg" alt="" class="right">
+                </div>    
+            </div>
+            <div class="sub-imgs" *ngIf = 'value.images.length > 1'>
+                <div *ngFor = 'let image of value.images | slice:1:5; let i = index' class="sub-img" id="{{i}}">
+                    <img src="{{image}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="description-bar" (click) = 'goToAdv($event)'>
+            <div class="title-line">
+                <div class="name">{{value.advertismentTitle}}</div>
+                <div class="price">{{value.price}} ₽</div>
+            </div>
+            <div class="middle-line">
+               <div class="description">{{value.description}}</div> 
+               <div class="some-more-info">
+                   <div class="more-author-advs user-advs-btn" (click) = 'addOtherUserAdvList()'><img src="../../../../../../assets/img/profile-user.svg" alt="" class="user-advs-btn"></div>
+                   <div class="comments-count"><img src="../../../../../../assets/img/chat.svg" alt="">{{value.commentsCount}}</div>
+               </div>
+            </div>
+            <div class="info-line">
+                <div class="author">Автор: {{value.userName}}</div>
+                <div class="date">{{date}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="change-btns" *ngIf = "this.value.canChange;">
+        <div class="delete-btn btn" (click) = 'showConfirmBar()'>
+            <img src="../../../../../../assets/img/delete 1.svg" alt="">
+        </div>
+        <div class="change-btn btn" [routerLink] = "['changeAdvertisment', value.id]"> 
+            <img src="../../../../../../assets/img/pencil.svg" alt="">
+        </div> 
+    </div>
+    <div class="deleted-message" *ngIf = 'manageAdv() == "Deleted" || manageAdv() == "DeletedByAdmin"'>
+        <div class="deleted-by-admin-message" *ngIf = 'manageAdv() == "DeletedByAdmin"'>Удалено администратором</div>  
+        <div class="deleted-by-user-message" *ngIf = 'manageAdv() == "Deleted"'>Скрыто пользователем</div>  
+    </div>
+    <div class="confirm-bar confirm-approve a none">
+        <div class="message">Удалить обьявление</div>
+        <div class="btns">              
+            <button class="confirm-btn yes a" (click) = 'deleteAdv(this.value.id)'>Удалить</button>
+            <button class="confirm-btn no a" (click) = 'showConfirmBar()'>Отмена</button>
+        </div>
+    </div>
+</div>

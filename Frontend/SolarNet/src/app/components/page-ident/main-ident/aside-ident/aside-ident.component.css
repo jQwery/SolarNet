@@ -1,0 +1,630 @@
+aside{
+    display: flex;
+    justify-content: space-between;
+}
+
+.aside-show-btn{
+    display: none;
+}
+
+.selects-container{
+    margin-top: 30px;
+    margin-right: 15px;
+}
+
+.selects-container input.s-input{
+    height: 28px;
+    padding: 0;
+    padding-left: 10px;
+    border: 1px solid #000;
+    background-color: rgba(255, 248, 84, 0.5);;
+    font-size: 14px;
+}
+
+.price-select{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title{
+    font-size: 16px;
+}
+
+.price-select-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.from-to-price-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.from-to-price-container .to{
+    margin-left: 20px;
+}
+
+.price-input{
+    margin-top: 5px;
+    width: 88px;
+    border-radius: 7px;
+}
+
+.end{
+    margin-left: 15px;
+}
+
+.s-container{
+    display: flex;
+    margin-top: 20px;
+    width: 215px;
+}
+
+.category-select{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.category-list{
+    /* border: 1px solid rgb(161, 160, 160); */
+    background-color:hsl(58, 100%, 66%);
+    border: 1px solid black;    
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    position: absolute;
+    width: 213px;
+    top: 54px;
+    z-index: 2;   
+}
+
+.category-list>ul{
+    list-style: none;
+    margin: 0;
+    font-size: 14px;
+    padding: 0;
+}
+
+.category-list>ul>li{
+    padding-top: 3px;
+    /* padding-bottom: 3px; */
+    /* padding-left: 10px; */
+    width: 213px;
+    line-height: 20px;
+}
+
+.category-list-hidden{
+    display: none;
+}
+
+.nav-sub-bar{
+    background-color: #FFF854;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 213px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-sub-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 213px;
+}
+
+.round{
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.menu-btn-rotate{
+    transform: rotate(180deg);
+}
+
+.category-list>ul>li:hover{
+    cursor: pointer;
+    background-color:#FFFA7E; 
+}
+
+.nav-sub-item:hover{
+    cursor: pointer;
+    background-color:#FFFA7E; 
+}
+
+.input-btn-continer{
+    display: flex;
+    margin-top: 5px;
+    width: 215px;
+}
+
+.category-input{
+    width: 190px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    transition: 0.3s;
+}
+
+.date-select{
+    display: flex;
+    flex-direction: column;
+}
+
+.date-input{
+    margin-top: 5px;
+    width: 203px;
+    border-radius: 7px;
+}
+
+.menu-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 30px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background: #000;
+}
+
+.menu-btn:hover{
+    background-color: #3E3E3E;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.check-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.comments-check{
+    margin-top: 15px;
+}
+
+.place-select{
+    width: 215px;
+    margin-top: 20px;
+}
+
+.place-input{
+    border-radius: 7px;
+    width: 205px;
+    margin-top: 5px;
+}
+
+.select-btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.select-btn{
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: 7px;
+    border: 1px solid #A5A5A5;
+    font-size: 14px;
+    background: #fff;
+}
+
+.apply-btn{
+    background-color: #FFF854;
+}
+
+.apply-btn:hover{
+    background-color: #FFFA7E;
+    border-color: black;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.apply-btn:active{
+    background-color: #FFF617;
+}
+
+.clear-btn:hover{
+    background-color: #E0E0E0;
+    border-color: black;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.clear-btn:active{
+    background-color:#fff;
+}
+
+.aside-line{
+    height: 99%;
+    border-left: 2px solid #A5A5A5;
+    margin-top: 15px;
+}
+
+.straight-borders{
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    transition: 0.2s;
+}
+
+.close-btn{
+    display: none;
+}
+
+@media only screen and (max-width : 769px) {
+
+
+    .selects-container{
+        margin-top: 15px;
+        margin-right: 0px;
+    }
+
+    .selects-container input.s-input{
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .title{
+        font-size: 20px;
+    }
+
+    .price-input{
+        width: 90px;
+    }
+
+    .s-container{
+        width: 200px;
+    }
+
+    .input-btn-continer{
+        width: 200px;
+    }
+
+    .category-input{
+        width: 160px;
+    }
+
+    .menu-btn{
+        width: 40px;
+        height: 32px;
+    }
+
+    .category-list{
+        /* border: 1px solid rgb(161, 160, 160); */
+        width: 198px;
+        top: 47px;
+    }
+    
+    .category-list>ul{
+        font-size: 17px;
+    }
+    
+    .category-list>ul>li{
+        padding-top: 6px;
+        padding-bottom: 6px;
+        width: 188px;
+    }
+
+    .date-input{
+        width: 200px;
+    }
+
+    .place-select{
+        width: 200px;
+    }
+
+    .place-input{
+        border-radius: 7px;
+        width: 200px;
+        margin-top: 15px;
+    }
+
+    .check-container{
+        font-size: 15px;
+    }
+
+    .check-container input{
+        margin-right: 10px;
+    }
+
+    .select-btn{
+        width: 105px;
+        height: 40px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width : 426px) {
+    .aside-show-btn{
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 130px;
+        left: 20px;
+        z-index: 4;
+    }
+
+    .aside-show-btn>img{
+        width: 100%;
+        height: 100%;
+    }
+
+    aside{
+        position: fixed;
+        top: 0px;
+        left: -700px;
+        height: 150%;
+        width: 100%;
+        background-color: rgb(224, 224, 224);
+        transition: 0.3s;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+    } 
+
+    .aside-open{
+        left: 0px;
+    }
+
+    .close-btn{
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .close-btn:hover{
+        cursor: pointer;
+    }
+
+    .close-btn>img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .aside-line{
+        display: none;
+    }
+
+    .selects-container{
+        margin-top: 60px;
+        margin-left: 5px;
+    }
+
+    .selects-container input.s-input{
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .title{
+        margin-left: 0px;
+        font-size: 30px;
+    }
+
+    .price-input{
+        width: 165px;
+    }
+
+    .s-container{
+        width: 370px;
+    }
+
+    .input-btn-continer{
+        width: 370px;
+    }
+
+    .category-input{
+        width: 310px;
+    }
+
+    .menu-btn{
+        width: 60px;
+        height: 52px;
+    }
+
+    .category-list{
+        width: 368px;
+        top: 82px;
+        height: 200px;
+        overflow: scroll;
+    }
+    
+    .category-list>ul{
+        font-size: 25px;
+    }
+    
+    .category-list>ul>li{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 358px;
+    }
+
+    .nav-sub-bar{
+        width: 350px;
+        font-size: 17px;
+    }
+    
+    .nav-sub-item{
+        padding-top: 7px;
+        padding-bottom: 7px;
+        width: 350px;
+    }
+
+    .date-input{
+        width: 360px;
+    }
+
+    .place-select{
+        width: 360px;
+    }
+
+    .place-input{
+        border-radius: 7px;
+        width: 360px;
+        margin-top: 15px;
+    }
+
+    .check-container{
+        font-size: 25px;
+    }
+
+    .check-container input{
+        margin-right: 15px;
+    }
+
+    .select-btn{
+        width: 165px;
+        height: 60px;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width : 376px){
+    .aside-show-btn{
+        top: 10px;
+        left: 5px;
+    }
+
+    .aside-show-btn>img{
+        width: 100%;
+        height: 100%;
+    }
+
+    aside{
+        position: fixed;
+        top: 0px;
+        left: -700px;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(224, 224, 224);
+        transition: 0.3s;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+    } 
+
+    .aside-open{
+        left: 0px;
+    }
+
+    .close-btn{
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .close-btn:hover{
+        cursor: pointer;
+    }
+
+    .close-btn>img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .aside-line{
+        display: none;
+    }
+
+    .selects-container{
+        margin-top: 40px;
+        margin-left: 5px;
+    }
+
+    .selects-container input.s-input{
+        height: 40px;
+        font-size: 25px;
+    }
+
+    .title{
+        margin-left: 0px;
+        font-size: 25px;
+    }
+
+    .price-input{
+        width: 165px;
+    }
+
+    .s-container{
+        width: 350px;
+    }
+
+    .input-btn-continer{
+        width: 350px;
+    }
+
+    .category-input{
+        width: 280px;
+    }
+
+    .menu-btn{
+        width: 60px;
+        height: 42px;
+    }
+
+    .category-list{
+        width: 348px;
+        top: 76px;
+    }
+    
+    .category-list>ul{
+        font-size: 25px;
+    }
+    
+    .category-list>ul>li{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 338px;
+    }
+    
+    .nav-sub-bar{
+        width: 340px;
+        font-size: 17px;
+    }
+    
+    .nav-sub-item{
+        padding-top: 7px;
+        padding-bottom: 7px;
+        width: 340px;
+    }
+
+    .date-input{
+        width: 350px;
+    }
+
+    .place-select{
+        width: 350px;
+    }
+
+    .place-input{
+        border-radius: 7px;
+        width: 350px;
+        margin-top: 15px;
+    }
+
+    .check-container{
+        font-size: 25px;
+    }
+
+    .check-container input{
+        margin-right: 15px;
+    }
+
+    .select-btn{
+        width: 160px;
+        height: 60px;
+        font-size: 25px;
+    }
+}

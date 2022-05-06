@@ -1,0 +1,25 @@
+<div class="user-bar u{{value.id}}">
+    <div class="user" (click) = 'addOtherUserAdvList()'>
+        <div class="main-img">
+            <img src="{{mainImgLink}}" alt="" class="main">
+        </div>
+        <div class="description-bar">
+            <div class="user-info-field user-id">Id: {{value.id}}</div>
+            <div class="user-info-field user-name">Имя: {{value.name}}</div>
+            <div class="user-info-field phone-number">Номер телефона: {{value.phoneNumber}}</div>
+            <div class="user-info-field user-role">Роль: {{value.role}}</div>
+        </div>
+    </div>
+    <div class="change-btns">
+        <div class="delete-btn btn" (click) = 'showConfirmBar()'>
+            <img src="../../../../../../assets/img/delete 1.svg" alt="">
+        </div>
+    </div>
+    <div class="confirm-bar confirm-approve a  none">
+        <div class="message">Заблокировать пользователя</div>
+        <div class="btns">              
+            <button class="confirm-btn yes a" (click) = 'deleteUser()'>Заблокировать</button>
+            <button class="confirm-btn no a" (click) = 'showConfirmBar()'>Отмена</button>
+        </div>
+    </div>
+</div>

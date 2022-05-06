@@ -1,0 +1,36 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- DeploymentFinal
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'VPS'
+    runOptions: 'inline'
+    inline: 'cd deployment/Back-end/ && git pull && rtylrnqbshgjrwva5y2vaid2hx2pzvk5snfg4jttnlkzyuatglda'
+    readyTimeout: '20000'
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'VPS'
+    runOptions: 'inline'
+    inline: 'cd deploymnet/SolaraNet/ && docker-compose build'
+    readyTimeout: '20000'
+
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'VPS'
+    runOptions: 'inline'
+    inline: 'docker-compose up -d'
+    readyTimeout: '20000'

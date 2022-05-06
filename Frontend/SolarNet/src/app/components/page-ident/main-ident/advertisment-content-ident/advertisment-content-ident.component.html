@@ -1,0 +1,112 @@
+<div class="advertisment-bar" *ngIf = 'getAdminStatus();then adminTable else advertismentContainer'></div>
+    <ng-template #adminTable>
+        <div class="main-table-container">
+                <div class="current-adv-list-info" *ngIf = '!isUsersList'>{{currentAdvListInfo}}</div>
+                <table class="main-table">
+                    <div class="table-shown" *ngIf = 'isAdvertisments && !isUsersList; then showTable else hideTable'></div>
+                    <ng-template #showTable>   
+                        <thead class="table-head-bar">
+                            <tr>
+                                <td class = 'head-item'>id</td>
+                                <td class = 'head-item'>Имя пользователя</td>
+                                <td class = 'head-item'>Наименование обьявления</td>
+                                <td class = 'head-item'>Категория</td>
+                                <td class = 'head-item'>Дата публикации</td>
+                            </tr>
+                        </thead>
+                    </ng-template>
+                    <ng-template #hideTable>
+                        <div class="is-advs" *ngIf = '!isAdvertisments && notApprovedListEmptyNow'>Входящих запросов на подачу обьявлений нет</div>
+                        <div class="is-advs" *ngIf = '!isAdvertisments && otherUserListEmptyNow'>У этого пользователя пока нет обьявлений</div>
+                        <div class="is-advs" *ngIf = '!isAdvertisments && (!isCommonAdvertisments)'>Здесь пока нет обьявлений</div>
+                    </ng-template>
+                    <tbody class="table-body-bar">
+                        <ng-container #books></ng-container>
+                    </tbody>
+                </table>
+         </div>
+    </ng-template>
+    <ng-template #advertismentContainer>
+        <div class="advertisments-container">
+            <div class="sort-bar">
+                <div class="sort-info-container">
+                    <div class="current-adv-list-info">{{currentAdvListInfo}}</div>
+                    <label *ngIf = 'isUserAdvs.isUserAdvsStatus'><input type="checkbox" class="photo-check" [(ngModel)] = "showHiddenAdvsField.showHiddenAdvs" name="showHiddenAdvs" (click) = 'changeShowHiddenAdvsStatus()'>Показать скрытые</label>
+                    <div class="sort-container">
+                        <span class="title">Сортировка</span>
+                        <div class="date-sort-container sort-bar-container">
+                            <!-- <div class="s-title">Параметр</div> -->
+                            <div class="always-visible d-av d" (click) = 'showParamsList($event);'>
+                                <input type="text" placeholder="Дата" class="date-sort-bar s-bar d" disabled [(ngModel)] = 'sortForm.sortParamType' name="sortParamType">
+                                <div class="d-btn menu-btn d" >
+                                    <img src="../../../../../assets/img/Polygon 1.svg" alt="" class="d-btn d">
+                                </div>
+                                <div class="sort-params date-sort-params sort-params-hidden d">
+                                    <ul>
+                                        <li class="sort-items d" (click) = 'addValueToInput($event)'>По цене</li>
+                                        <li class="sort-items d" (click) = 'addValueToInput($event)'>По дате</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="price-sort-container sort-bar-container">
+                            <!-- <div class="s-title">Тип</div> -->
+                            <div class="always-visible p-av p" (click) = 'showParamsList($event)'>
+                                <input type="text" placeholder="Цена" class="price-sort-bar s-bar p" disabled [(ngModel)] = 'sortForm.sortType' name="sortType">
+                                <div class="p-btn menu-btn p" >
+                                    <img src="../../../../../assets/img/Polygon 1.svg" alt="" class="p-btn p">
+                                </div>
+                                <div class="sort-params price-sort-params sort-params-hidden p">
+                                    <ul>
+                                        <li class="sort-items p" (click) = 'addValueToInput($event)'>По возрастанию</li>
+                                        <li class="sort-items p" (click) = 'addValueToInput($event)'>По убыванию</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>      
+                    </div> 
+                </div>
+                <div class="sort-line"></div>
+            </div>
+            <div *ngIf = '!isAdvertisments' class='is-advs'>
+                <div *ngIf = '!isUserAdvertisments'>
+                    У вас пока нет обьявлений, <br> создайте первое обьявление прямо сейчас <br>
+                    нажав на кнопку "Подать обьявление" в правом верхнем углу</div>
+                <div *ngIf = '!isCommonAdvertisments'>
+                    Здесь пока нет обьявлений
+                </div>
+            </div>
+            <ng-container #books></ng-container>
+        </div>
+    </ng-template>
+    <div class="pagination-shown" *ngIf = 'isAdvertisments; then paginationShown'></div>
+    <ng-template #paginationShown>
+        <div class="pagination-container" >
+            <div class="page-arrow left-arrow" (click) = 'changePaginationOffset($event)'>
+                <img src="../../../../../assets/img/pagination-arrow-l 2.svg" alt="" class="arrow left-arrow">
+            </div>
+            <div class="page-number-container prev-page-number-container" *ngIf = 'currentPageNumber > 2' (click) = 'goToThisPage($event)'>
+                <div class="page-number">1</div>
+            </div>
+            <div *ngIf = 'currentPageNumber > 2'>...</div>
+            <div class="page-number-container prev-page-number-container" *ngIf = '(prevPageNumber != 0)' (click) = 'goToThisPage($event)'>
+                <div class="page-number">{{prevPageNumber}}</div>
+            </div>
+            <div class="page-number-container" (click) = 'goToThisPage($event)'>
+                <div class="page-number">{{currentPageNumber}}</div>
+            </div>
+            <div class="page-number-container next-page-number-container" *ngIf = '(nextPageNumber < lastPageNumber)' (click) = 'goToThisPage($event)'>
+                <div class="last-page-number">{{nextPageNumber}}</div>
+            </div>
+            <div *ngIf = 'lastPageNumber > currentPageNumber'>...</div>
+            <div class="page-number-container last-page-number-container" *ngIf = 'lastPageNumber > currentPageNumber' (click) = 'goToThisPage($event)'>
+                <div class="last-page-number">{{lastPageNumber}}</div>
+            </div>
+            <div class="page-arrow right-arrow"  (click) = 'changePaginationOffset($event)'> 
+                <img src="../../../../../assets/img/pagination-arrow.svg" alt="" class="arrow right-arrow">
+            </div>
+        </div>
+    </ng-template>
+   

@@ -1,0 +1,86 @@
+<div class="aside-show-btn" (click) = 'openAside($event)'>
+    <img src="../../../../../assets/img/menu-button-of-three-horizontal-lines.svg" alt="">
+</div>
+<aside>
+    <div class="close-btn" (click) = 'openAside($event)'>
+        <img src="../../../../../assets/img/close 1.svg" alt="">
+    </div>
+    <form class="selects-container">
+        <div class="price-select">
+            <span class="title">Цена</span>
+            <div class="price-select-container">
+                <div class="from-to-price-container">
+                    <span class="from">от</span>
+                    <input type="number" class="s-input price-input start" placeholder="от" [(ngModel)] = "paramsForm.minimumCost" name="minimumCost">    
+                </div>
+                <div class="from-to-price-container">
+                    <span class="to">до</span>
+                    <input type="number" class="s-input price-input end" placeholder="до" [(ngModel)] = "paramsForm.maximumCost" name="maximumCost">
+                </div>
+            </div> 
+        </div>
+        <div class="category-select s-container">
+            <span>Категория</span>
+            <div class="input-btn-continer">
+                <input type="text" placeholder="Категория" class="category-input s-input" disabled [(ngModel)] = "paramsForm.idCategory" name="idCategory">
+                <div class="cat menu-btn" (click) = 'showCategoryList($event)'>
+                    <img src="../../../../assets/img/Polygon 1.svg" alt="">
+                </div>
+            </div>
+            <div class="category-list category-list-hidden">
+                <ul>
+                    <li class="category-item" id="1" (click) = 'addValueToInput($event)'>Транспорт
+                        <ul class="nav-sub-bar">
+                            <li class="nav-sub-item" id="5" (click) = 'addValueToInput($event)'>Автомобили</li>
+                            <li class="nav-sub-item" id="6" (click) = 'addValueToInput($event)'>Мотоциклы</li>
+                            <li class="nav-sub-item" id="7" (click) = 'addValueToInput($event)'>Спецтехника</li>
+                            <li class="nav-sub-item" id="8" (click) = 'addValueToInput($event)'>Водный транспорт</li>
+                        </ul>
+                    </li>
+                    <li class="category-item" id="2" (click) = 'addValueToInput($event)'>Вещи
+                        <ul class="nav-sub-bar">
+                            <li class="nav-sub-item" id="9" (click) = 'addValueToInput($event)'>Одежда, обувь</li>
+                            <li class="nav-sub-item" id="10" (click) = 'addValueToInput($event)'>Аксессуары</li>
+                            <li class="nav-sub-item" id="11" (click) = 'addValueToInput($event)'>Для детей</li>
+                            <li class="nav-sub-item" id="12" (click) = 'addValueToInput($event)'>Прочее</li>
+                        </ul>
+                    </li>
+                    <li class="category-item" id="3" (click) = 'addValueToInput($event)'>Недвижимость
+                        <ul class="nav-sub-bar">
+                            <li class="nav-sub-item" id="13"  (click) = 'addValueToInput($event)'>Квартиры</li>
+                            <li class="nav-sub-item" id="14" (click) = 'addValueToInput($event)'>Дома</li>
+                            <li class="nav-sub-item" id="15" (click) = 'addValueToInput($event)'>Комнаты</li>
+                            <li class="nav-sub-item" id="16" (click) = 'addValueToInput($event)'>Гаражи</li>
+                        </ul>
+                    </li>
+                    <li class="category-item round" id="4" (click) = 'addValueToInput($event)'>Электроника
+                        <ul class="nav-sub-bar round">
+                            <li class="nav-sub-item" id="17" (click) = 'addValueToInput($event)'>Телефоны</li>
+                            <li class="nav-sub-item" id="18" (click) = 'addValueToInput($event)'>Ноутбуки</li>
+                            <li class="nav-sub-item" id="19" (click) = 'addValueToInput($event)'>Комплектующие</li>
+                            <li class="nav-sub-item round" id="20" (click) = 'addValueToInput($event)'>Аксессуары</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="date-select s-container">
+            <span>Дата</span>
+            <input type="text" placeholder="Дата" class="date-input s-input" [(ngModel)] = "paramsForm.date" name="date" onfocus = "(this.type = 'date')" onblur="(this.type='text')">
+        </div>
+        <div class="check-container">
+            <label><input type="checkbox" class="photo-check" [(ngModel)] = "paramsForm.onlyWithPhoto" name="onlyWithPhoto">Только с фото</label>
+            <label><input type="checkbox" class="comments-check" [(ngModel)] = "paramsForm.onlyWithComments" name="onlyWithComments">С комментариями</label>
+         </div>
+         <div class="place-select">
+             <span>Город</span>
+             <input type="text" placeholder="Город" class="place-input s-input" [(ngModel)] = "paramsForm.city" name="city">
+         </div>
+         <div class="select-btns">
+             <button class="select-btn apply-btn" (click) = "printForm();openAside($event);changeParamsForm()">Применить</button>
+             <button class="select-btn clear-btn" (click) = "clearAllParams()">Сбросить</button>
+         </div>
+    </form>
+    <div class="aside-line">
+    </div>
+ </aside>

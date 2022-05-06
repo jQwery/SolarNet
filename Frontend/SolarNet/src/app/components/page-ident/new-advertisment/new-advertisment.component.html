@@ -1,0 +1,234 @@
+<main class="main">
+    <form action="" class="new-adv" #newAdvForm = 'ngForm'>
+        <div class="new-adv-category-select-container new-adv-cont">
+            <div class="label c-label">Категория</div>
+            <div class="new-adv-category-input-container err-c">
+                <input type="text" readonly  #category = 'ngModel' [(ngModel)] = 'changeAdvForm.categoryId' name = 'categoryId' class="new-adv-category-input new-adv-input" placeholder="Выберите категорию товара" required (click) = 'showCategoryMainList($event)' (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                <div class="help-bar c-help-bar none">
+                    Выберите название категории из списка ниже<br>
+                    Поле обязательно для заполнения
+                </div>
+                <ul class="new-adv-category-list none">
+                    <li class="new-adv-category-item transport" id="1" (mouseenter) = "showCategorySubList($event)" (mouseleave) = "closeCategorySublist($event)">Транспорт
+                        <ul class="new-adv-category-sublist none transport">
+                            <li class="new-adv-category-subitem" id="5" (click) = 'addValueToInput($event)'>Автомобили</li>
+                            <li class="new-adv-category-subitem" id="6" (click) = 'addValueToInput($event)'>Мотоциклы</li>
+                            <li class="new-adv-category-subitem" id="7" (click) = 'addValueToInput($event)'>Спецтехника</li>
+                            <li class="new-adv-category-subitem" id="8" (click) = 'addValueToInput($event)'>Водный транспорт</li>
+                        </ul>
+                    </li>
+                    <li class="new-adv-category-item clothes" id="2" (mouseenter) = "showCategorySubList($event)" (mouseleave) = "closeCategorySublist($event)">Вещи
+                        <ul class="new-adv-category-sublist none clothes">
+                            <li class="new-adv-category-subitem" id="9"  (click) = 'addValueToInput($event)'>Одежда, обувь</li>
+                            <li class="new-adv-category-subitem" id="10"  (click) = 'addValueToInput($event)'>Аксессуары</li>
+                            <li class="new-adv-category-subitem" id="11"  (click) = 'addValueToInput($event)'>Для детей</li>
+                            <li class="new-adv-category-subitem" id="12"  (click) = 'addValueToInput($event)'>Прочее</li>
+                        </ul>
+                    </li>
+                    <li class="new-adv-category-item offices" id="3" (mouseenter) = "showCategorySubList($event)" (mouseleave) = "closeCategorySublist($event)">Недвижимость
+                        <ul class="new-adv-category-sublist none offices">
+                            <li class="new-adv-category-subitem" id="13" (click) = 'addValueToInput($event)'>Квартиры</li>
+                            <li class="new-adv-category-subitem" id="14" (click) = 'addValueToInput($event)'>Дома</li>
+                            <li class="new-adv-category-subitem" id="15" (click) = 'addValueToInput($event)'>Комнаты</li>
+                            <li class="new-adv-category-subitem" id="16" (click) = 'addValueToInput($event)'>Гаражи</li>
+                        </ul>
+                    </li>
+                    <li class="new-adv-category-item electronics" id="4" (mouseenter) = "showCategorySubList($event)" (mouseleave) = "closeCategorySublist($event)">Электроника
+                        <ul class="new-adv-category-sublist none electronics">
+                            <li class="new-adv-category-subitem" id="17" (click) = 'addValueToInput($event)'>Телефоны</li>
+                            <li class="new-adv-category-subitem" id="18" (click) = 'addValueToInput($event)'>Ноутбуки</li>
+                            <li class="new-adv-category-subitem" id="19" (click) = 'addValueToInput($event)'>Комплектующие</li>
+                            <li class="new-adv-category-subitem" id="20" (click) = 'addValueToInput($event)'>Аксессуары</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="new-adv-name-select-container new-adv-cont">
+            <label class="label n-label" for = "n-i">Наименование</label>
+            <div class="new-adv-name-input-container err-c">
+                <input type="text" [(ngModel)] = 'changeAdvForm.advertismentTitle' #name = 'ngModel' name = 'advertismentTitle' class="new-adv-name-input new-adv-input" id="n-i" placeholder="Введите наименование товара" minlength="3" maxlength="30" required (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                <div class="help-bar n-help-bar none">
+                    Введите название обьявления, где будет отображена ключевая информация о вашм товаре, не более 30 символов <br>
+                    Поле обязательно для заполнения
+                </div>
+                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-massage">
+                    <div *ngIf = "name.errors?.required">
+                        Поле не может быть пустым
+                    </div>
+                    <div *ngIf = "(name.errors?.minlength || name.errors?.maxlength)  && name.touched">
+                        Поле не соответствует требованиям
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-adv-description-select-container new-adv-cont">
+            <label for="d-i" class="label d-label">Описание товара</label>
+            <div class="new-adv-description-input-container err-c">            
+                <textarea [(ngModel)] = 'changeAdvForm.description' #description = 'ngModel' name="description" class="new-adv-description-select-input new-adv-input" cols="63" rows="10" wrap="hard" placeholder="Опишите товар с указанием всех его качеств и характеристик" minlength="3" maxlength="500" required (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'></textarea>
+                <div class="help-bar d-help-bar none">
+                    Введите полное описание для вашего товара, постарайтесь описать все характеристики, которые смогут выделить его на фоне других<br>
+                    Не более 500 символов <br>
+                    Поле обязательно для заполнения
+                </div>
+                <div *ngIf="description.invalid && (description.dirty || description.touched)" class="error-massage">
+                    <div *ngIf = "description.errors?.required">
+                        Поле не может быть пустым
+                    </div>
+                    <div *ngIf = "(description.errors?.minlength || description.errors?.maxlength) && description.touched">
+                        Поле не соответствует требованиям
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-adv-place-select-container new-adv-cont">
+            <label for="p-i" class="label pl-label">Месторасположение</label>
+            <div class="new-adv-place-input-container err-c">            
+                <input type="text" [(ngModel)] = 'changeAdvForm.city' #city = 'ngModel' name="city" class="new-adv-place-input new-adv-input" placeholder="Введите город или полное место продажи товара" minlength="2" maxlength="40" required (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                <div class="help-bar pl-help-bar none">
+                    Введите место, где будет распологаться место продажи<br>
+                    Поле обязательно для заполнения
+                </div>
+                <div *ngIf="city.invalid && (city.dirty || city.touched)" class="error-massage">
+                    <div *ngIf = "city.errors?.required">
+                        Поле не может быть пустым
+                    </div>
+                    <div *ngIf = "(city.errors?.minlength || city.errors?.maxlength) && city.touched">
+                        Поле не соответствует требованиям
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-adv-price-select-container new-adv-cont">
+            <label for="p-i" class="label pr-label">Цена</label>
+            <div class="new-adv-name-input-container err-c">            
+                <input type="number" [(ngModel)] = 'changeAdvForm.price' #price = 'ngModel' name="price" class="new-adv-price-input new-adv-input" placeholder="Введите цену" required maxlength = "20" (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                <div class="help-bar pr-help-bar none">
+                    Введите стоимость вашего товара, стоимость в рублях<br>
+                    Поле обязательно для заполнения
+                </div>
+                <div *ngIf="price.invalid && (price.dirty || price.touched)" class="error-massage error-massage-price">
+                    <div *ngIf = "price.errors?.required">
+                        Поле не может быть пустым
+                    </div>
+                    <div *ngIf = "price.errors?.maxlength && price.touched">
+                        Поле не соответствует требованиям
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-adv-photos-select-container new-adv-cont">
+            <label for="" class="label ph-label">Фото</label>
+            <input style="display: none" #fileInput type="file" multiple (change)="onFileSelected($event)" >
+            <div class="add-img-container">
+                <div class="upload-img" (click)='fileInput.click()'>Нажмите чтобы добавить фото<img src="../../../../assets/img/free-icon-paperclip-1632690.svg" alt=""></div>
+                <div class="img-mini-container">
+                    <ng-container #imgMini></ng-container>
+                </div>
+            </div>
+
+            <!-- <div class="new-adv-name-input-container err-c">     
+                <div class="input-btn-continer">
+                    <input type="text" name="images" class="new-adv-photo-input new-adv-input" placeholder="Добавьте ссылку на фото" (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                     <div class="help-bar ph-help-bar none">
+                        Оставьте ссылку на фото вашего товара, так его будет легче продать <br>
+                        Нажмите на + чтобы добавить еще фотографии<br>
+                        Поле необязательно для заполнения
+                    </div>
+                    <div class="cat menu-btn" (click) = 'addPhotoLinkInput($event)'>
+                        <img src="../../../../assets/img/add 1.svg" alt="">
+                    </div>
+                </div>     
+                <div class="input-btn-continer none">
+                    <input type="text" name="images" class="new-adv-photo-input new-adv-input" placeholder="Добавьте ссылку на фото" (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                     <div class="help-bar ph-help-bar none">
+                        Оставьте ссылку на фото вашего товара, так его будет легче продать <br>
+                        Нажмите на + чтобы добавить еще фотографии<br>
+                        Поле необязательно для заполнения
+                    </div>
+                    <div class="cat menu-btn" (click) = 'addPhotoLinkInput($event)'>
+                        <img src="../../../../assets/img/add 1.svg" alt="">
+                    </div>
+                </div>  
+                <div class="input-btn-continer none">
+                    <input type="text" name="images" class="new-adv-photo-input new-adv-input" placeholder="Добавьте ссылку на фото" (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                     <div class="help-bar ph-help-bar none">
+                        Оставьте ссылку на фото вашего товара, так его будет легче продать <br>
+                        Нажмите на + чтобы добавить еще фотографии<br>
+                        Поле необязательно для заполнения
+                    </div>
+                    <div class="cat menu-btn" (click) = 'addPhotoLinkInput($event)'>
+                        <img src="../../../../assets/img/add 1.svg" alt="">
+                    </div>
+                </div> 
+                <div class="input-btn-continer none">
+                    <input type="text" name="images" class="new-adv-photo-input new-adv-input" placeholder="Добавьте ссылку на фото" (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                     <div class="help-bar ph-help-bar none">
+                        Оставьте ссылку на фото вашего товара, так его будет легче продать <br>
+                        Нажмите на + чтобы добавить еще фотографии<br>
+                        Поле необязательно для заполнения
+                    </div>
+                    <div class="cat menu-btn" (click) = 'addPhotoLinkInput($event)'>
+                        <img src="../../../../assets/img/add 1.svg" alt="">
+                    </div>
+                </div> 
+                <div class="input-btn-continer none">
+                    <input type="text" name="images" class="new-adv-photo-input new-adv-input" placeholder="Добавьте ссылку на фото" (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                     <div class="help-bar ph-help-bar none">
+                        Оставьте ссылку на фото вашего товара, так его будет легче продать <br>
+                        Нажмите на + чтобы добавить еще фотографии<br>
+                        Поле необязательно для заполнения
+                    </div>
+                    <div class="cat menu-btn" (click) = 'addPhotoLinkInput($event)'>
+                        <img src="../../../../assets/img/add 1.svg" alt="">
+                    </div>
+                </div> 
+                <div class="input-btn-continer none">
+                    <input type="text" name="images" class="new-adv-photo-input new-adv-input" placeholder="Добавьте ссылку на фото" (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                     <div class="help-bar ph-help-bar none">
+                        Оставьте ссылку на фото вашего товара, так его будет легче продать <br>
+                        Нажмите на + чтобы добавить еще фотографии<br>
+                        Поле необязательно для заполнения
+                    </div>
+                    <div class="cat menu-btn" (click) = 'addPhotoLinkInput($event)'>
+                        <img src="../../../../assets/img/add 1.svg" alt="">
+                    </div>
+                </div> 
+                <div class="input-btn-continer none">
+                    <input type="text" name="images" class="new-adv-photo-input new-adv-input" placeholder="Добавьте ссылку на фото" (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                     <div class="help-bar ph-help-bar none">
+                        Оставьте ссылку на фото вашего товара, так его будет легче продать <br>
+                        Нажмите на + чтобы добавить еще фотографии<br>
+                        Поле необязательно для заполнения
+                    </div>
+                    <div class="cat menu-btn" (click) = 'addPhotoLinkInput($event)'>
+                        <img src="../../../../assets/img/add 1.svg" alt="">
+                    </div>
+                </div>  
+                <div class="input-btn-continer none">
+                    <input type="text" name="images" class="new-adv-photo-input new-adv-input" placeholder="Добавьте ссылку на фото" (mouseenter) = 'showHelpBar($event)' (mouseleave) = 'closeHelpBar($event)'>
+                     <div class="help-bar ph-help-bar none">
+                        Оставьте ссылку на фото вашего товара, так его будет легче продать <br>
+                        Нажмите на + чтобы добавить еще фотографии<br>
+                        Поле необязательно для заполнения
+                    </div>
+                    <div class="cat menu-btn" (click) = 'addPhotoLinkInput($event)'>
+                        <img src="../../../../assets/img/add 1.svg" alt="">
+                    </div>
+                </div>       
+            </div> -->
+
+        </div>
+        
+        
+        <!-- <button type="button" (click)="onUpload()">Upload</button> -->
+
+        <div class="swith-buttons" *ngIf = 'getPageType();then change else publicate'></div>
+        <ng-template #change>        
+            <button class="publicate-btn" [disabled] = '!newAdvForm.form.valid' (click) = 'print();changeAdv()'>Изменить</button>
+        </ng-template>
+        <ng-template #publicate>        
+            <button class="publicate-btn" [disabled] = '!newAdvForm.form.valid' (click) = 'printNewAdvValues();submit(this.newAdvForm.form.value)'>Опубликовать</button>
+        </ng-template>
+    </form>
+</main> 

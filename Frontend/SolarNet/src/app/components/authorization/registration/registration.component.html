@@ -1,0 +1,75 @@
+<div class="registration-container">
+    <div class="close-btn" >
+        <img src="../../../../assets/img/close 1.svg" alt="">
+    </div>
+    <div class="check-reg-access-block" *ngIf = 'regAccess; then access else regFormBar'></div>
+    <ng-template #access>
+        <div class="reg-access">
+            <div class="acces-message message">Регистрация прошла успешно</div>
+            <div class="access-img"><img src="../../../../assets/img/checkmark.svg" alt=""></div>
+            <div class="description-message message">Для завершения регистрации, перейдите по ссылке, которую мы отправили вам на почту</div>
+        </div>
+    </ng-template>
+    <ng-template #regFormBar>
+        <form class="reg-form-container" #regForm = 'ngForm'>
+                <div class="title">Регистрация</div>
+                <div class="data-input-container name-input-container">
+                    <input type="text" class="data-input name-input" placeholder="Ваше имя" #name = 'ngModel' [(ngModel)] = 'getRegValues().name' name = 'name' required minlength = '3' maxlength = '30'>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-massage">
+                        <div *ngIf = "name.errors?.required">
+                            Поле не может быть пустым
+                        </div>
+                        <div *ngIf = "(name.errors?.minlength || name.errors?.maxlength) && name.touched">
+                            Поле не соответствует требованиям
+                        </div>
+                    </div>
+                </div>
+                <div class="data-input-container mail-input-container">
+                    <input type="text" class="data-input mail-input"placeholder="Электронная почта" #mail = 'ngModel' [(ngModel)] = 'getRegValues().email' name = 'email' required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'>
+                    <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="error-massage">
+                        <div *ngIf = "mail.errors?.required">
+                            Поле не может быть пустым
+                        </div>
+                        <div *ngIf = "mail.errors?.pattern && mail.touched">
+                            Поле не соответствует требованиям
+                        </div>
+                    </div>
+                </div>
+                <div class="data-input-container phone-input-container">
+                    <input type="text" class="data-input phone-input" placeholder="Номер телефона" #phoneNum = 'ngModel' [(ngModel)] = 'getRegValues().phone' name = 'phone' max required pattern ='^((\+7|7|8)+([0-9]){10})$'>
+                    <div *ngIf="phoneNum.invalid && (phoneNum.dirty || phoneNum.touched)" class="error-massage">
+                        <div *ngIf = "phoneNum.errors?.required">
+                            Поле не может быть пустым
+                        </div>
+                        <div *ngIf = "phoneNum.errors?.pattern && phoneNum.touched">
+                            Поле не соответствует требованиям
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="data-input-container password-input-container"><input type="password" class="data-input password-input"placeholder="Пароль" [(ngModel)] = 'getRegValues().password' name = 'password' required minlength = '8'></div>
+                <div class="data-input-container password-2-input-container"><input type="password" class="data-input password-2-input"placeholder="Подтвердите пароль" [(ngModel)] = 'getRegValues().passwordAgain' name = 'passwordAgain' required></div> -->
+                <div ngModelGroup="password" #userPassword="ngModelGroup" required class="passwords-container">
+                    <div class="data-input-container password-input-container"><input type="password"  #passWord = 'ngModel' class="data-input password-input"placeholder="Пароль" [(ngModel)] = 'getRegValues().password' name = 'password' required pattern = '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z])\S{8,15}$'></div>
+                    <div *ngIf="passWord.invalid && (passWord.dirty || passWord.touched)" class="error-massage">
+                        <div *ngIf = "passWord.errors?.pattern && passWord.touched">
+                            Поле должно содержать строчную, заглавную буквы, цифры и спец.символы
+                        </div>
+                    </div>
+                    <div class="data-input-container password-2-input-container"><input type="password" class="data-input password-2-input"placeholder="Подтвердите пароль" [(ngModel)] = 'getRegValues().passwordAgain' name = 'passwordAgain' required></div>
+                    <div *ngIf="(userPassword.invalid || userPassword.value?.password != userPassword.value?.passwordAgain) && (userPassword.touched)" class="error-massage">
+                    <div *ngIf = "userPassword.invalid; else nomatch">
+                        Заполните верно все поля
+                    </div>
+                        <ng-template #nomatch >
+                            Пароли не совпадают
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="data-input-container code-input-container">
+                    <input type="text" class="data-input code-input" placeholder="Код с картинки" [(ngModel)] = 'getRegValues().code' name = 'code' required>
+                    <div class="not-robot-code">{{capcha}}</div>
+                </div>
+                <button class="active-btn registrate" (click) = 'printForm();registerNewUser()' [disabled] = '(!regForm.form.valid)'>Зарегестрироваться</button>
+        </form>
+    </ng-template>
+</div>

@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face { 
+    font-family: "Roboto";
+    src: url(assets/fonts/Roboto-Regular.ttf) format("truetype");
+    font-weight: regular;
+    font-style: normal;
+}
+@font-face { 
+    font-family: "Roboto";
+    src: url(assets/fonts/Roboto-Medium.ttf) format("truetype");
+    font-weight: medium;
+    font-style: normal;
+}
+@font-face { 
+    font-family: "Roboto";
+    src: url(assets/fonts/Roboto-Bold.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face { 
+    font-family: "Consolas";
+    src: url(assets/fonts/Consolas-bold.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+input[type="text"]{
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: none;
+}
+
+button:active, button:focus {
+    outline: none !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.body{
+     font-family: 'Roboto', sans-serif; 
+     margin: 0;
+     padding: 0;
+     display: flex;
+     align-items: center;
+}
+
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+
+/* Стили для таблицы на странице администратора, по-другому не нашел способ добавить стили к компоненту */
+td {
+    border: 1px solid black;
+    height: 60px;
+    text-align: center;
+    font-size: 13px;
+}
+
+tr:nth-child(2n) {
+    background: #f4f4f4;
+}
+
+tr:hover {
+    cursor: pointer;
+    background-color: rgba(255, 248, 84, 0.5);
+}
+
+tr:hover .administration-btns{
+    left: 77.5%;
+}
+
+@media only screen and (max-width : 769px){
+    tr:hover .administration-btns{
+        left: 68%;
+    }
+}
+
+@media only screen and (max-width : 426px){
+    tr:hover .administration-btns{
+        left: 56%;
+    }
+}
+
+@media only screen and (max-width : 376px){
+    tr:hover .administration-btns{
+        left: 48%;
+    }
+}

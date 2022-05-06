@@ -1,0 +1,16 @@
+<main class="main" [ngSwitch] = "getLoggedStatus()">
+    <ng-template ngSwitchCase = "nd">
+        <app-aside-ident></app-aside-ident>
+        <app-advertisment-content-ident></app-advertisment-content-ident>
+    </ng-template>
+    <ng-template ngSwitchCase = "user">
+        <app-aside-ident></app-aside-ident>
+        <app-advertisment-content-ident></app-advertisment-content-ident>
+    </ng-template>
+    <ng-template ngSwitchCase = "admin">
+        <app-aside-ident></app-aside-ident>
+        <!-- <app-aside-admin></app-aside-admin> -->
+        <!-- <app-advertisments-table-admin></app-advertisments-table-admin> -->
+        <app-advertisment-content-ident></app-advertisment-content-ident>
+    </ng-template>
+</main>

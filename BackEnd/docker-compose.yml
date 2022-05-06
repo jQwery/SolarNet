@@ -1,0 +1,19 @@
+version: "2.2"
+services:
+
+
+  api:
+    build:
+      context: .
+      dockerfile: SolaraNet/Dockerfile
+    ports:
+      - 82:80
+
+  authapi:
+    build:
+      context: .
+      dockerfile: SolaraNet.AuthAPI/Dockerfile
+    ports:
+      - 81:80
+
+

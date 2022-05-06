@@ -1,0 +1,115 @@
+<header class="header">
+    <ng-container #authorization></ng-container>
+    <div class="header-container">
+        <div class="navigation-side">
+            <div class="header-1-line-container">
+                <div class="label" [routerLink] = "['']" (click) = 'clearAllParams()'>
+                    <img src="../../../assets/img/Label.svg" alt="">
+                </div>
+                <button class="user-adv-list-btn show-category-list" (click) = 'showCategoryList($event)' >Категории</button>
+                <nav class="nav-menu" (click) = 'showCategoryList($event)'>
+                    <ul class="nav-bar">
+                        <li class="nav-item" id = "1" [routerLink] = "['']"  (click) ='getCategoryId($event)'>Транспорт
+                            <ul class="nav-sub-bar">
+                                <li class="nav-sub-item" id="5" [routerLink] = "['']" (click) ='getCategoryId($event)'>Автомобили</li>
+                                <li class="nav-sub-item" id="6" [routerLink] = "['']" (click) ='getCategoryId($event)'>Мотоциклы</li>
+                                <li class="nav-sub-item" id="7" [routerLink] = "['']" (click) ='getCategoryId($event)'>Спецтехника</li>
+                                <li class="nav-sub-item" id="8" [routerLink] = "['']" (click) ='getCategoryId($event)'>Водный транспорт</li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" id = "2" [routerLink] = "['']"  (click) ='getCategoryId($event)'>Вещи
+                            <ul class="nav-sub-bar">
+                                <li class="nav-sub-item" id="9" [routerLink] = "['']" (click) ='getCategoryId($event)'>Одежда, обувь</li>
+                                <li class="nav-sub-item" id="10" [routerLink] = "['']" (click) ='getCategoryId($event)'>Аксессуары</li>
+                                <li class="nav-sub-item" id="11" [routerLink] = "['']" (click) ='getCategoryId($event)'>Для детей</li>
+                                <li class="nav-sub-item" id="12" [routerLink] = "['']" (click) ='getCategoryId($event)'>Прочее</li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" id = "3" [routerLink] = "['']"  (click) ='getCategoryId($event)'>Недвижимость
+                            <ul class="nav-sub-bar">
+                                <li class="nav-sub-item" id="13"  [routerLink] = "['']" (click) ='getCategoryId($event)'>Квартиры</li>
+                                <li class="nav-sub-item" id="14" [routerLink] = "['']" (click) ='getCategoryId($event)'>Дома</li>
+                                <li class="nav-sub-item" id="15" [routerLink] = "['']" (click) ='getCategoryId($event)'>Комнаты</li>
+                                <li class="nav-sub-item" id="16" [routerLink] = "['']" (click) ='getCategoryId($event)'>Гаражи</li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" id = "4" [routerLink] = "['']"  (click) ='getCategoryId($event)'>Электроника
+                            <ul class="nav-sub-bar">
+                                <li class="nav-sub-item" id="17" [routerLink] = "['']" (click) ='getCategoryId($event)'>Телефоны</li>
+                                <li class="nav-sub-item" id="18" [routerLink] = "['']" (click) ='getCategoryId($event)'>Ноутбуки</li>
+                                <li class="nav-sub-item" id="19" [routerLink] = "['']" (click) ='getCategoryId($event)'>Комплектующие</li>
+                                <li class="nav-sub-item" id="20" [routerLink] = "['']" (click) ='getCategoryId($event)'>Аксессуары</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Разделение на роли: боковые кнопки-->
+                <div class="switch-container" [ngSwitch] = "getLoggedStatus()">
+                    <ng-template ngSwitchCase = "user"><!--авторизованный-->
+                        <!-- При клике на эту кнопку будет выводится список обьявлений пользователя в том же месте где и все остальные 
+                        обьявления, только будет возможность удалять обьявления, компонент, который будет генерироваться будет отличаться
+                        от остальных -->
+                        <button class="user-adv-list-btn"  (click) = "addUserAdvList()" [routerLink] = "['']">Мои обьявления</button>
+                        <!-- При клике будет переход на страницу личного кабинета -->
+                        <div class="user-profile" [routerLink] = "['userPage']">
+                            <img src="{{avatarLink}}" alt="" class="avatar-img">
+                        </div>
+                        <div class="user-profile-mini">
+                            <img src="{{avatarLink}}" alt="" class="avatar-img" (click) = 'showHideUserRoom()'>
+                            <ul class="user-room none">
+                                <li class="user-room-item" [routerLink] = "['userPage']" (click) = 'showHideUserRoom()'>Мой профиль</li>
+                                <li class="user-room-item" (click) = "addUserAdvList()" [routerLink] = "['']" (click) = 'showHideUserRoom()'>Мои обьявления</li>
+                            </ul>
+                        </div>
+                    </ng-template>
+                    <ng-template ngSwitchCase = "nd">
+                        <div class="user-btns-hidden"></div>
+                    </ng-template>
+                    <ng-template ngSwitchCase = "admin">
+                        <div class="admin-garbage">
+                            <button class="start-page-btn" (click) = 'addNotApprovedAdvList()' [routerLink] = "['']">Запросы</button>
+                            <div class="small-start-page-btn" (click) = 'addNotApprovedAdvList()' [routerLink] = "['']">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="search-field">
+                <input type="text" placeholder="Поиск обьявлений" [(ngModel)] = "searchParam.keyWords" name="keyWords" class="search-input" >
+                <div class="search-btn" (click) = 'addValueToInput($event)'>
+                    <img src="../../../assets/img/Search-icon.svg" alt="" class="search">
+                </div>
+            </div>
+        </div>
+        <!-- Разделение на роли: боковые кнопки-->
+        <div class="side-btns" [ngSwitch] = 'getLoggedStatus()'>
+            <ng-template ngSwitchCase = "nd"><!-- неавторизованный-->
+                <div class="sign-btns">
+                    <button (click) = "showAuthorizationBars($event)" class="registration-btn">
+                        Регистрация
+                    </button>
+                    <button (click) = "showAuthorizationBars($event)" class="sign-up-btn">
+                        Вход
+                    </button>
+                </div>
+            </ng-template>
+            <ng-template ngSwitchCase = "user"><!--авторизованный-->
+                <div class="new-adv">
+                    <button class="new-adv-btn" [routerLink] = "['createAdvertisment']">Подать обьявление</button>
+                </div>
+            </ng-template>
+            <ng-template ngSwitchCase = "admin">
+                <div class="sign-btns">
+                    <button class="registration-btn" (click) = 'exit()'>
+                        Выйти
+                    </button>
+                    <button class="sign-up-btn" [routerLink] = "['']" (click) = 'addAllUsersList()' >
+                        Пользователи
+                    </button>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+    <div class="header-line"></div>
+</header>

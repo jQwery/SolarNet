@@ -1,0 +1,11 @@
+version: '3'
+services:
+
+# Клиентское приложение
+  client:
+    build:
+      context: .
+    ports:
+      - 80:80
+    restart: on-failure
+

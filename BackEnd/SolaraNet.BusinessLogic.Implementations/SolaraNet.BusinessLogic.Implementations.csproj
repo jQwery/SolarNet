@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.5.0" />
+    <PackageReference Include="Isopoh.Cryptography.Argon2" Version="1.1.10" />
+    <PackageReference Include="MailKit" Version="2.10.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SolaraNet.BusinessLogic.Abstracts\SolaraNet.BusinessLogic.Abstracts.csproj" />
+    <ProjectReference Include="..\SolaraNet.DataAccessLayer.Abstracts\SolaraNet.DataAccessLayer.Abstracts.csproj" />
+    <ProjectReference Include="..\SolaraNet.DataAccessLayer.Entities\SolaraNet.DataAccessLayer.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

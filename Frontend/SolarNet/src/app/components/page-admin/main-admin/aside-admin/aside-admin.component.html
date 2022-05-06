@@ -1,0 +1,38 @@
+<aside>
+    <form class="selects-container">
+        <div class="sort-select s-container">
+            <div class="input-btn-continer ibc0" id="0">
+                <input type="text" placeholder="Сортировать по" class="sort-input s-input" disabled [(ngModel)] = "paramsForm.sort" name="sort">
+                <div class="cat menu-btn" id="0" (click) = 'showCategoryList($event)'>
+                    <img src="../../../../../assets/img/Polygon 1.svg" alt="" id="0">
+                </div>
+            </div>
+            <div class="sort-list list0 list-hidden" id="0">
+                <ul id="0">
+                    <li class="sort-item" id="1" (click) = 'addValueToInput($event)'>Id</li>
+                    <li class="sort-item" id="2" (click) = 'addValueToInput($event)'>Имя пользователя</li>
+                    <li class="sort-item" id="3" (click) = 'addValueToInput($event)'>Категория</li>
+                    <li class="sort-item" id="4" (click) = 'addValueToInput($event)'>Дата публикации</li>
+                </ul>
+            </div>
+        </div>
+        <div class="group-select s-container">
+            <div class="input-btn-continer ibc1" id="1">
+                <input type="text" placeholder="Группировать по" class="group-input s-input" disabled [(ngModel)] = "paramsForm.group" name="group">
+                <div class="cat menu-btn" id="1" (click) = 'showCategoryList($event)'>
+                    <img src="../../../../../assets/img/Polygon 1.svg" alt="" id="1">
+                </div>
+            </div>
+            <div class="group-list list1 list-hidden" id="1">
+                <ul id="1">
+                    <li class="group-item" id="1" (click) = 'addValueToInput($event)'>Id</li>
+                    <li class="group-item" id="2" (click) = 'addValueToInput($event)'>Имя пользователя</li>
+                    <li class="group-item" id="3" (click) = 'addValueToInput($event)'>Категория</li>
+                    <li class="group-item" id="4" (click) = 'addValueToInput($event)'>Дата публикации</li>
+                </ul>
+            </div>
+        </div>
+    </form>
+    <div class="aside-line">
+    </div>
+ </aside>

@@ -1,0 +1,34 @@
+.main{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width : 769px) {
+   .main{
+       justify-content: space-between;
+       max-width: 729px;
+       margin: auto;
+   } 
+}
+
+
+@media only screen and (max-width : 426px) {
+    .main{
+        justify-content: center;
+    }
+/* 
+    app-aside-ident{
+        display: none;
+    } */
+}
+
+@media only screen and (max-width : 376px){
+    .main{
+        position: relative;
+    }
+
+    app-aside-ident{
+        position: absolute;
+        left: 20px;
+    }
+}

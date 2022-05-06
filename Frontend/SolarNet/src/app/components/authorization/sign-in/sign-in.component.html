@@ -1,0 +1,35 @@
+<form class="sign-in-form-container" #signInForm = 'ngForm' #Form>
+    <div class="close-btn">
+        <img src="../../../../assets/img/close 1.svg" alt="">
+    </div>
+    <div class="title">Вход</div>
+    <div class="data-input-container mail-input-container">
+        <input type="text" class="data-input mail-input" placeholder="Электронная почта" #mail = 'ngModel' [(ngModel)] = 'getSignInValues().mail' name = 'mail' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+        <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="error-massage">
+            <div *ngIf = "mail.errors?.required">
+                Поле не может быть пустым
+            </div>
+            <div *ngIf = "mail.errors?.pattern && mail.touched">
+                Поле не соответствует требованиям
+            </div>
+        </div>
+    </div>
+    <div class="data-input-container password-s-input-container">
+        <input type="password" class="data-input password-input" placeholder="Пароль" #password = 'ngModel' [(ngModel)] = 'getSignInValues().password' name = 'password' minlength ='8' required>
+        <div class="password-help">Забыли пароль?</div>
+    </div>
+    <div class="sign-in-container">
+        <button class="active-btn sign-in" (click) = 'printForm();login(getSignInValues().mail, getSignInValues().password)' [disabled] = '!signInForm.form.valid'>Вход</button><!-- Вставить функцию login при клике -->
+        <div class="social-links">
+            <div class="links-container">
+                <img src="../../../../assets/img/facebook.svg" alt="" class="s-link">
+                <img src="../../../../assets/img/instagram.svg" alt="" class="s-link">
+                <img src="../../../../assets/img/twitter.svg" alt="" class="s-link">
+                <img src="../../../../assets/img/vk.svg" alt="" class="s-link">
+            </div>
+            <div class="link-sign-in">Или войти с помощью</div>
+        </div>
+    </div>
+    <div class="sign-in-line"></div>
+    <button class="active-btn reg-btn">Зарегистрироваться</button>
+</form>
